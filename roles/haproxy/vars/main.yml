@@ -1,0 +1,4 @@
+---
+# vars file for haproxy
+
+port_no: 8080

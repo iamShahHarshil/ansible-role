@@ -1,0 +1,17 @@
+---
+# tasks file for haproxy
+
+- name: "install haproxy rpm"
+  package:
+          name: "haproxy"
+          state: present
+
+- name: "update config file of haproxy"
+  template:
+          dest: "/etc/haproxy/haproxy.cfg"
+          src: "haproxy.cfg.j2"
+
+- name: "starting the service"
+  service:
+          name: "haproxy"
+          state: restarted
